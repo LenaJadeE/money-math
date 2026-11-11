@@ -40,7 +40,11 @@ public class MoneyMath {
         System.out.println("float is off by " + floatOff + " cents");
 
         BigDecimal ignored = BigDecimal.ZERO;
-        ignored.add(new BigDecimal("5.00"));
+        ignored = ignored.add(new BigDecimal("5.00"));
         System.out.println("add without assigning: " + ignored);
+
+        BigDecimal saved = BigDecimal.ZERO;
+        saved = saved.add(new BigDecimal("5.00"));
+        System.out.println("add and assign: " + saved);
     }
 }
