@@ -27,6 +27,18 @@ public class MoneyMath {
             bigTotal = bigTotal.add(new BigDecimal("19.99"));
         }
 
+        System.out.println();
+        System.out.println("float: " + floatTotal);
+        System.out.println("double: " + doubleTotal);
+        System.out.println("BigDecimal: " + bigTotal);
+
+        System.out.println();
+        System.out.println("float equals double: " + (floatTotal == doubleTotal));
+        System.out.println("double equals BigDecimal: " + (BigDecimal.valueOf(doubleTotal).compareTo(bigTotal) == 0));
+
+        double floatOff = (floatTotal - bigTotal.doubleValue()) * 100;
+        System.out.println("float is off by " + floatOff + " cents");
+
         BigDecimal ignored = BigDecimal.ZERO;
         ignored.add(new BigDecimal("5.00"));
         System.out.println("add without assigning: " + ignored);
