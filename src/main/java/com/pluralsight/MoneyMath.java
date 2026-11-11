@@ -17,6 +17,16 @@ public class MoneyMath {
             System.out.println("float: " + floatTotal + "  double: " + doubleTotal + "  BigDecimal: " + bigTotal);
         }
 
+        floatTotal = 0;
+        doubleTotal = 0;
+        bigTotal = BigDecimal.ZERO;
+
+        for (int i = 0; i < 1000; i++) {
+            floatTotal += 19.99f;
+            doubleTotal += 19.99;
+            bigTotal = bigTotal.add(new BigDecimal("19.99"));
+        }
+
         BigDecimal ignored = BigDecimal.ZERO;
         ignored.add(new BigDecimal("5.00"));
         System.out.println("add without assigning: " + ignored);
